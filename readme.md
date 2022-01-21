@@ -11,11 +11,17 @@ Parameters to be added in order to use this plugin
 
 Parameters are: CORAL_DOMAIN_NAME, CORAL_STATIC_COMMENTS_COUNT
 
+- CORAL_DOMAIN_NAME = "<input your domain name of Coral Talk server'
+- CORAL_STATIC_COMMENTS_COUNT = True
+
 How to use it in the template
 -----------------------------
 
-CORAL_DOMAIN_NAME = "<input your domain name of Coral Talk server'
-CORAL_STATIC_COMMENTS_COUNT = True
+```
+    {% if CORAL_STATIC_COMMENTS_COUNT and 'coral_talk_comments_count' in PLUGINS %}
+      Comments: {{article.coral_comments.count}}
+    {% endif %}
+```
 
 License
 -------
